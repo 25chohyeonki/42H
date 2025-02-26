@@ -58,6 +58,8 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'starting';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -396,13 +398,15 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">2.1. 가장 단순한 코드</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">2.2. 기초 명령문</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">2.3. 변수 할당</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">2.4. 파이썬 계산기</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">2.5. 정수와 부동소수점</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">2.6. 필수 예제</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">2.7. 연습문제</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hello-world">2.1. Hello, world! 문장 출력</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">2.2. 문자열</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">2.3. 줄바꿈과 들여쓰기</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">2.4. 기초 명령문</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">2.5. 변수 할당</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">2.6. 파이썬 계산기</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">2.7. 정수와 부동소수점</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">2.8. 예제</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">2.9. 연습문제</a></li>
 </ul>
             </nav>
         </div>
@@ -416,17 +420,32 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="ch-starting">
 <span id="id1"></span><h1><span class="section-number">2. </span>프로그래밍 맛보기<a class="headerlink" href="#ch-starting" title="Link to this heading">#</a></h1>
-<section id="id2">
-<h2><span class="section-number">2.1. </span>가장 단순한 코드<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<section id="hello-world">
+<h2><span class="section-number">2.1. </span>Hello, world! 문장 출력<a class="headerlink" href="#hello-world" title="Link to this heading">#</a></h2>
 <p>많은 프로그래밍 입문서가 아래 문장을 화면에 출력하는 것으로 시작한다.</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Hello, world!
 </pre></div>
 </div>
 <p>그렇게 하는 이유는 위 문장을 출력하는 코드를 작성할 때 주요 프로그램 요소를 함께 소개할 수 있기 때문이다.
-이런 면에서 파이썬은 아래와 같이 매우 단순한 명령문을 이용하여 위 문장을 화면에 출력시킬 수 있다.</p>
+이런 면에서 파이썬은 아래와 같이 매우 단순한 명령문을 이용하여 위 문장을 화면에 출력시킬 수 있다.
+단, 문장을 큰따옴표 또는 작은 따옴표로 감싸야 한다.
+또한 따옴표의 중요하지 않지만 동일한 종류의 따옴표로 감싸야 함에 주의한다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello, world!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello, world!
+</pre></div>
+</div>
+</div>
+</div>
+<p>또는</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hello, world!&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -440,28 +459,52 @@ document.write(`
 프로그래밍에서의 함수는 매우 중요하기에 나중에 자세히 소개한다.
 여기서는 <code class="docutils literal notranslate"><span class="pre">print</span></code> 함수를 이렇게 사용하는구나 라는 점만 기억해둔다.
 또한 앞으로 소개할 모든 함수는 <code class="docutils literal notranslate"><span class="pre">print()</span></code> 처럼 함수 이름과 괄호를 함께 표기하는 방식으로 언급될 것이다.</p>
-<p>파이썬은 또한 들여쓰기와 줄바꿈을 이용하여 명령문들의 블록을 지정하여 코드를 여러 불록으로 구분한다.
-에를 들어 아래 코드는 파이썬을 좋아하는 경우에만 Hello world!가 출력되도록 한다.</p>
+<div class="tip admonition">
+<p class="admonition-title">주의사항</p>
+<p><code class="docutils literal notranslate"><span class="pre">print()</span></code> 함수를 실행했을 때
+문장을 지정할 때 사용되는 따옴표 기호 <code class="docutils literal notranslate"><span class="pre">&quot;</span></code> 또는 <code class="docutils literal notranslate"><span class="pre">'</span></code>는 함께 출력되지 않는다.
+하지만 그렇다고 해서 사용된 따옴표가 컴퓨터에서 사라지는 것은 아니고 편의상 화면에 보이지 않을 뿐이다.</p>
+</div>
+</section>
+<section id="id2">
+<h2><span class="section-number">2.2. </span>문자열<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">&quot;Hello,</span> <span class="pre">world!&quot;</span></code>처럼 문자와 기호의 나열로 구성된 문장을 프로그래밍 분야에서는 <strong>문자열</strong><font size='2'>string</font>이라 부른다.
+문자열은 아래에 언급된 것들처럼 일반적으로 임의의 기호로 구성된다.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;^_^;;;&quot;</span>
+<span class="s2">&quot;우.... ㅎㅎㅎ&quot;</span>
+<span class="s1">&#39;영어 ㅠㅠㅠ English!!!&#39;</span>
+<span class="s1">&#39;+++---+++...+++&#39;</span>
+</pre></div>
+</div>
+<p>문자열은 그 자체로 어떤 의미도 갖지 않는다.
+예를 들어 숫자 3과 숫자 기호 3으로 구성된 문자열 <code class="docutils literal notranslate"><span class="pre">'3'</span></code>은 엄연히 다르다.
+숫자 3은 연산에 사용되지만 문자열 <code class="docutils literal notranslate"><span class="pre">'3'</span></code>은 일반적으로 연산에 허용되지 않는다.</p>
+</section>
+<section id="id3">
+<h2><span class="section-number">2.3. </span>줄바꿈과 들여쓰기<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<p>파이썬은 줄바꿈과 들여쓰기를 이용하여 명령문들을 구분하고 명령문들로 구성된 블록을 지정한다.
+에를 들어 아래 코드는 파이썬을 좋아하는 경우에만 Hello world!와 I love Python 두 문자열이 출력되도록 한다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">love_python</span> <span class="o">=</span> <span class="kc">True</span>
 
 <span class="k">if</span> <span class="n">love_python</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello, world!&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;I love Python&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello, world!
+I love Python
 </pre></div>
 </div>
 </div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">love_python</span></code>은 <code class="docutils literal notranslate"><span class="pre">love_python</span></code>이 참인지 여부를 확인하도록 하는 명령문이며 조건문이라 불린다.
+<p><code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">love_python:</span></code>은 <code class="docutils literal notranslate"><span class="pre">love_python</span></code>이 참인지 여부를 확인하도록 하는 명령문이다.
 그런데 1번 줄에서 <code class="docutils literal notranslate"><span class="pre">love_python</span> <span class="pre">=</span> <span class="pre">True</span></code>라고 작성되어 있기에
 <code class="docutils literal notranslate"><span class="pre">love_python</span></code>이 참으로 확인되고,
-따라서 앞서 살펴 본대로 <code class="docutils literal notranslate"><span class="pre">print(&quot;Hello,</span> <span class="pre">world!&quot;)</span></code>이 실행되어
-Hello, world!가 화면에 출력된다.</p>
+따라서 <code class="docutils literal notranslate"><span class="pre">print(&quot;Hello,</span> <span class="pre">world!&quot;)</span></code>와 <code class="docutils literal notranslate"><span class="pre">print('I</span> <span class="pre">love</span> <span class="pre">Python')</span></code> 두 명령문이 차례대로 실행된다.</p>
 <p>반면에 아래 코드를 실행하면 아무 것도 출력되지 않는다.
 이유는 1번 줄에서 <code class="docutils literal notranslate"><span class="pre">love_python</span></code>이 거짓으로 확인되기 때문이다.</p>
 <div class="cell docutils container">
@@ -470,13 +513,18 @@ Hello, world!가 화면에 출력된다.</p>
 
 <span class="k">if</span> <span class="n">love_python</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello, world!&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;I love Python&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
+<p><code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">love_python:</span></code>에 콜론 기호 <code class="docutils literal notranslate"><span class="pre">:</span></code> 사용되고 이어지는 두 개의 명령문은 들여쓰기 이후에 작성되었음에 주의한다.
+이렇게 동일한 정도의 들여쓰기 이후에 작성된 명령문으로 구성된 블록을 코드 블록이라 부르며,
+그런 코드 블록은 특정 조건 하에서만 실행된다.
+예를 들어 위 코드에서는 <code class="docutils literal notranslate"><span class="pre">love_python</span></code>이 참인 값을 가리키는 경우에만 실행된다.</p>
 </section>
-<section id="id3">
-<h2><span class="section-number">2.2. </span>기초 명령문<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<section id="id4">
+<h2><span class="section-number">2.4. </span>기초 명령문<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
 <p>컴퓨터 프로그램은 <strong>명령문</strong><font size="2">statement</font>들의 목록으로 구성된다.
 각각의 프로그래밍 언어는 <strong>구문</strong><font size='2'>syntax</font>이라 불리는
 프로그래밍 언어 고유의 명령문 작성법을 제공한다.
@@ -497,15 +545,17 @@ Hello, world!가 화면에 출력된다.</p>
 파이썬 코드를 이용하여
 변수 할당 명령문을 활용해본다.</p>
 </section>
-<section id="id4">
-<h2><span class="section-number">2.3. </span>변수 할당<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
+<section id="id5">
+<h2><span class="section-number">2.5. </span>변수 할당<a class="headerlink" href="#id5" title="Link to this heading">#</a></h2>
 <p>단순하게 말해 컴퓨터 프로그램은 값을 저장하고 조작하여 새로운 값을 계산하고, 계산된 값을 활용하는
 방법을 묘사한다.
-따라서 값을 저장하는 기능이 프로그램의 기본이다.</p>
-<p>값의 저장과 활용은 반드시 <strong>변수</strong><font size='2'>variable</font>를 활용해야 한다.
+따라서 값을 저장하는 기능이 프로그램의 기본이다.
+값의 저장과 활용은 반드시 <strong>변수</strong><font size='2'>variable</font>를 활용해야 한다.
 변수는 저장된 값을 가리키는 일종의 이름이며,
-코드 어디에서든 자신이 가리키는 값을 대신하여 활용될 수 있다.
-값을 저장하고 저장된 변수를 선언하는 과정은
+코드 어디에서든 자신이 가리키는 값을 대신하여 활용될 수 있다.</p>
+<p>변수는 키보드에서 한글 또는 영어 문자 기호, 숫자 기호, 밑줄 기호 <code class="docutils literal notranslate"><span class="pre">_</span></code>를 이용한 임의의 조합으로 지정될 수 있다.
+앞서 사용한 <code class="docutils literal notranslate"><span class="pre">love_python</span></code> 또한 하나의 변수이며 참을 의미하는 <code class="docutils literal notranslate"><span class="pre">True</span></code>라는 값을 가리킨다.</p>
+<p>값을 저장하고 저장된 변수를 선언하는 과정은
 변수 할당 명령문을 지정하는 방식으로 이뤄진다.
 예를 들어 아래 코드는 3을 저장하면서 동시에 변수 <code class="docutils literal notranslate"><span class="pre">a</span></code>가 저장된 값 3을 가리키도록 하는 명령문이다.</p>
 <div class="cell docutils container">
@@ -567,16 +617,12 @@ Hello, world!가 화면에 출력된다.</p>
 </div>
 <p>변수 할당을 포함한 모든 명령문을 줄바꿈을 이용하여 동시에 실행시킬 수 있다.
 예를 들어 아래 코드는 변수 <code class="docutils literal notranslate"><span class="pre">a</span></code>가 가리키는 값과 변수 <code class="docutils literal notranslate"><span class="pre">b</span></code>가 가리키는 값을 이용하여
-변수 <code class="docutils literal notranslate"><span class="pre">c</span></code>와 <code class="docutils literal notranslate"><span class="pre">d</span></code>를 선언한 후에 두 변수가 가리키는 값을 화면에 출력한다.</p>
-<ul class="simple">
-<li><p>변수 <code class="docutils literal notranslate"><span class="pre">c</span></code>: 3 빼기 6 저장</p></li>
-<li><p>변수 <code class="docutils literal notranslate"><span class="pre">d</span></code>: 6 곱하기 3 저장</p></li>
-</ul>
+두 개의 새로운 변수를 선언한다.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c</span> <span class="o">=</span> <span class="n">a</span> <span class="o">-</span> <span class="n">b</span>
-<span class="n">d</span> <span class="o">=</span> <span class="n">b</span> <span class="o">*</span> <span class="n">a</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a빼기b</span> <span class="o">=</span> <span class="n">a</span> <span class="o">-</span> <span class="n">b</span>
+<span class="n">b곱하기a</span> <span class="o">=</span> <span class="n">b</span> <span class="o">*</span> <span class="n">a</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a빼기b</span><span class="p">,</span> <span class="n">b곱하기a</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -586,14 +632,17 @@ Hello, world!가 화면에 출력된다.</p>
 </div>
 </div>
 </div>
+<p>위 코드에서는 한글 문자 또한 변수를 지정할 때 사용될 수 있다는 것을 보여주기 위해 일부러 한글과 영어를 섞어 변수를 선언하였다.
+하지만 한글 문자를 변수 선언에 활용하는 경우는 많지 않다.
+따라서 앞으로 한글 문자를 변수 선언에 사용하지 않는다.</p>
 <div class="tip admonition">
 <p class="admonition-title">여러 줄의 코드 실행</p>
 <p>여러 줄의 명령문으로 구성된 코드는 맨 윗줄의 명령문부터 차례대로 실행된다.
 또한 윗 줄에서 실행됨 명령문의 결과는 아랫 줄의 명령문에서 활용될 수 있다.</p>
 </div>
 </section>
-<section id="id5">
-<h2><span class="section-number">2.4. </span>파이썬 계산기<a class="headerlink" href="#id5" title="Link to this heading">#</a></h2>
+<section id="id6">
+<h2><span class="section-number">2.6. </span>파이썬 계산기<a class="headerlink" href="#id6" title="Link to this heading">#</a></h2>
 <p>파이썬을 계산기로 활용할 수 있다.
 또한 변수를 연산에 사용할 수 있고,
 변수에 저장된 값을 조작하여 다른 값을 계산할 수도 있다.
@@ -837,8 +886,8 @@ Hello, world!가 화면에 출력된다.</p>
 </div>
 </div>
 </section>
-<section id="id6">
-<h2><span class="section-number">2.5. </span>정수와 부동소수점<a class="headerlink" href="#id6" title="Link to this heading">#</a></h2>
+<section id="id7">
+<h2><span class="section-number">2.7. </span>정수와 부동소수점<a class="headerlink" href="#id7" title="Link to this heading">#</a></h2>
 <p>몫 연산과 나눗셈 연산은 다름에 주의한다.
 몫 연산의 결과는 정수인 반면에 나눗셈의 결과는 유리수로 표현된다.</p>
 <div class="cell docutils container">
@@ -924,7 +973,7 @@ Hello, world!가 화면에 출력된다.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">30</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">31</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
     <span class="n">a</span> <span class="o">*</span> <span class="n">d</span><span class="o">.</span>
           <span class="o">^</span>
 <span class="ne">SyntaxError</span>: invalid syntax
@@ -933,13 +982,510 @@ Hello, world!가 화면에 출력된다.</p>
 </div>
 </div>
 </section>
-<section id="id7">
-<h2><span class="section-number">2.6. </span>필수 예제<a class="headerlink" href="#id7" title="Link to this heading">#</a></h2>
-<p>참고: <a class="reference external" href="https://colab.research.google.com/github/codingalzi/pybook/blob/master/examples/examples-starting.ipynb">(필수 예제) 프로그래밍 맛보기</a></p>
-</section>
 <section id="id8">
-<h2><span class="section-number">2.7. </span>연습문제<a class="headerlink" href="#id8" title="Link to this heading">#</a></h2>
-<p>참고: <a class="reference external" href="https://colab.research.google.com/github/codingalzi/pybook/blob/master/practices/practice-starting.ipynb">(연습) 프로그래밍 시작하기</a></p>
+<h2><span class="section-number">2.8. </span>예제<a class="headerlink" href="#id8" title="Link to this heading">#</a></h2>
+<p><strong>예제 1</strong></p>
+<p>아래 명령문들을 실행해서 오류가 발생하는 경우 오류의 종류와 원인을 설명하고 수정한다.
+오류가 발생하지 않으면 실행 결과를 설명한다.</p>
+<p>(1)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello World&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">32</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello World&quot;</span>
+                       <span class="o">^</span>
+<span class="ne">SyntaxError</span>: incomplete input
+</pre></div>
+</div>
+</div>
+</div>
+<p>답</p>
+<ul class="simple">
+<li><p>오류 종류: SyntaxError(구문 오류)</p></li>
+<li><p>오류 원인: print() 함수의 인자는 소괄호로 감싸져야 하는데 닫는 괄호가 없음.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 오류가 수정된 코드</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello World&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello World
+</pre></div>
+</div>
+</div>
+</div>
+<p>(2)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hello World&quot;)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">35</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hello World&quot;)</span>
+          <span class="o">^</span>
+<span class="ne">SyntaxError</span>: unterminated string literal (detected at line 1)
+</pre></div>
+</div>
+</div>
+</div>
+<p>답</p>
+<ul class="simple">
+<li><p>오류 종류: SyntaxError(구문 오류)</p></li>
+<li><p>오류 원인: 문자열은 동일한 따옴표로 감싸져야 함. 여는 따옴표는 작은따옴표인데 닫는 따옴표는 큰따옴표임. 동일한 따옴표를 사용해야 함.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 오류가 수정된 코드</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hello World&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello World
+</pre></div>
+</div>
+</div>
+</div>
+<p>또는</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello World&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello World
+</pre></div>
+</div>
+</div>
+</div>
+<p>(3)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="o">+</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
+</pre></div>
+</div>
+</div>
+</div>
+<p>답</p>
+<p>오류가 발생하지 않음. <code class="docutils literal notranslate"><span class="pre">+2</span></code>는 양의 정수 2로 처리됨.</p>
+<p>(4)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">023</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">39</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+    <span class="nb">print</span><span class="p">(</span><span class="mi">023</span><span class="p">)</span>
+          <span class="o">^</span>
+<span class="ne">SyntaxError</span>: leading zeros in decimal integer literals are not permitted; use an 0o prefix for octal integers
+</pre></div>
+</div>
+</div>
+</div>
+<p>답</p>
+<ul class="simple">
+<li><p>오류 종류: SyntaxError(구문 오류)</p></li>
+<li><p>오류 원인: 정수, 부동소수점 등은 0으로 시작할 수 없음.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 오류가 수정된 코드</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="mi">23</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>23
+</pre></div>
+</div>
+</div>
+</div>
+<p>또는 숫자가 아닌 기호들의 나열인 <code class="docutils literal notranslate"><span class="pre">&quot;023&quot;</span></code>을 의도했지만 미처 따옴표를 사용하지 않은 경우일 수도 있음.
+이처럼 따옴표로 감싸이면 어떠한 기호의 나열도 허용됨.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 오류가 수정된 코드</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;023&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>023
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>예제 2</strong></p>
+<p>변수 할당 명령문과 관련하여 주의해야할 점들을 다룬다.
+아래 명령문들을 실행해서 오류가 발생하는 경우 오류의 종류와 원인을 설명하고 수정한다.</p>
+<p>(1)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">23</span> <span class="o">=</span> <span class="n">n</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">42</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="g g-Whitespace">    </span><span class="mi">23</span> <span class="o">=</span> <span class="n">n</span>
+    <span class="o">^</span>
+<span class="ne">SyntaxError</span>: cannot assign to literal here. Maybe you meant &#39;==&#39; instead of &#39;=&#39;?
+</pre></div>
+</div>
+</div>
+</div>
+<p>답</p>
+<ul class="simple">
+<li><p>오류 종류: SyntaxError(구문 오류)</p></li>
+<li><p>오류 원인: 변수 할당 명령문의 등호 기호 왼쪽에 변수가, 오른쪽에 할당되는 값이 위치해야 함.
+변수는 숫자로 시작할 수 없음.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 오류가 수정된 코드 작성</span>
+
+<span class="n">n</span> <span class="o">=</span> <span class="mi">23</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>(2)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>답</p>
+<p>오류 발생하지 않음. x, y 모두 1을 할당 받음.
+즉 아래 코드를 간단하게 표현한 것임.
+하지만 추천되지 않음.
+이유는 한줄에 하나의 변수를 선언하면 나중에 코드를 이해할 때 보다 쉽게 이해됨.
+즉, 한줄에 하나의 명령문만 사용하기 추천.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>(3)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="n">k</span> <span class="o">+</span> <span class="mf">1.</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">46</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">y</span> <span class="o">=</span> <span class="n">k</span> <span class="o">+</span> <span class="mf">1.</span>
+
+<span class="ne">NameError</span>: name &#39;k&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<p>답</p>
+<ul class="simple">
+<li><p>오류 종류: NameError(이름 오류)</p></li>
+<li><p>오류 원인: 선언되지 않은 변수 <code class="docutils literal notranslate"><span class="pre">k</span></code> 가 사용됨. 즉 <code class="docutils literal notranslate"><span class="pre">k</span></code> 가리키는 값이 지정되지 않았음.</p></li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">k</span></code>를 먼저 선언하면 해결된다.
+예를 들어 아래 코드는 변수 <code class="docutils literal notranslate"><span class="pre">k</span></code>가 3을 가리키도록 한다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 오류가 수정된 코드 작성</span>
+
+<span class="c1"># k를 먼저 선언</span>
+<span class="n">k</span> <span class="o">=</span> <span class="mi">3</span>
+
+<span class="n">y</span> <span class="o">=</span> <span class="n">k</span> <span class="o">+</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>예제 3</strong></p>
+<p>먼저 아래와 같이 변수를 선언한다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">number</span> <span class="o">=</span> <span class="mi">17</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>언급된 값을 표현하는 수식을 <code class="docutils literal notranslate"><span class="pre">number</span></code> 변수를 이용하여 표현한 다음에 실행하여라.</p>
+<p>(1) number 더하기 2</p>
+<p>답</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">number</span> <span class="o">+</span> <span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>19
+</pre></div>
+</div>
+</div>
+</div>
+<p>(2) number 빼기 2.0</p>
+<p>답</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">number</span> <span class="o">-</span> <span class="mf">2.0</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>15.0
+</pre></div>
+</div>
+</div>
+</div>
+<p>(3) number 나누기 7</p>
+<p>답</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">number</span> <span class="o">/</span> <span class="mi">7</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.4285714285714284
+</pre></div>
+</div>
+</div>
+</div>
+<p>(4) number를 7로 나눴을 때의 몫</p>
+<p>답</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">number</span> <span class="o">//</span> <span class="mi">7</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
+</pre></div>
+</div>
+</div>
+</div>
+<p>(5) number를 7로 나눴을 때의 나머지</p>
+<p>답</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">number</span> <span class="o">%</span> <span class="mi">7</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
+</pre></div>
+</div>
+</div>
+</div>
+<p>(6) number의 세제곱을 (2 + 3)으로 나누기</p>
+<p>답</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">number</span><span class="o">**</span><span class="mi">3</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>982.6
+</pre></div>
+</div>
+</div>
+</div>
+<p>그런데 아래와 같이 하면 다른, 따라서 틀린 값이 나온다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">number</span><span class="o">**</span><span class="mi">3</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">3</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2459.5
+</pre></div>
+</div>
+</div>
+</div>
+<p>이유는 나눗셈 연산자 <code class="docutils literal notranslate"><span class="pre">/</span></code>의 우선순위가 덧셈 연산자 <code class="docutils literal notranslate"><span class="pre">+</span></code> 보다 높아서 위 수식은 아래 수식처럼 계산되기 때문이다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">number</span><span class="o">**</span><span class="mi">3</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="mi">3</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2459.5
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>예제 4</strong></p>
+<p>아래 코드에서처럼 3과 3.0을 수식에 함께 사용해도 된다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">3</span> <span class="o">+</span> <span class="mf">3.0</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6.0
+</pre></div>
+</div>
+</div>
+</div>
+<p>반면에 아래 수식을 계산하려 하면 오류가 발생한다.
+이유는 따옴표로 감싸인 숫자 기호는 기본적으로 연산에 사용될 수 없기 때문이다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">3</span> <span class="o">+</span> <span class="s1">&#39;3.0&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">58</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="mi">3</span> <span class="o">+</span> <span class="s1">&#39;3.0&#39;</span>
+
+<span class="ne">TypeError</span>: unsupported operand type(s) for +: &#39;int&#39; and &#39;str&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>반면에 아래 수식은 계산이 허용된다.
+다만 9.0이 아닌 따옴표로 감싸인 이상한 숫자 기호들의 나열이 계산된다.
+실제로 네 개의 기호 <code class="docutils literal notranslate"><span class="pre">3</span></code>, <code class="docutils literal notranslate"><span class="pre">.</span></code>, <code class="docutils literal notranslate"><span class="pre">0</span></code>으로 구성된 문자열 <code class="docutils literal notranslate"><span class="pre">'3.0'</span></code>이 세 번 단순 반복된다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">3</span> <span class="o">*</span> <span class="s1">&#39;3.0&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;3.03.03.0&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>숫자와 숫자가 아닌 것의 연산이 언제 어떤 방식으로 허용되는지에 대해서는 나중에 자세히 다룬다.</p>
+<p><strong>예제 5</strong></p>
+<p>1<span class="math notranslate nohighlight">\(\text{m}^2\)</span>는 0.3025평이다.
+84<span class="math notranslate nohighlight">\(\text{m}^2\)</span>는 몇 평인가?
+반대로 30평은 몇 <span class="math notranslate nohighlight">\(\text{m}^2\)</span>인지 계산하는 코드를 작성한다.</p>
+<p><strong>답</strong></p>
+<p>먼저 유용하게 활용할 수 있는 변수를 선언한다.
+어떤 변수가 필요한지, 왜 필요한지를 판단하는 일이 중요하다.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">one_squaremeter</span></code>: 1 제곱미터에 해당하는 평수</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">eightyfour_squaremeter</span></code>: 84 제곱미터에 해당하는 평수</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">one_pyeong</span></code>: 1 평에 해당하는 제곱미터</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">thirty_pyeong</span></code>: 30평에 해당하는 제곱미터</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">one_squaremeter</span> <span class="o">=</span> <span class="mf">0.3025</span>
+<span class="n">eightyfour_squaremeter</span> <span class="o">=</span> <span class="mi">84</span> <span class="o">*</span> <span class="n">one_squaremeter</span>
+<span class="n">one_pyeong</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="n">one_squaremeter</span>
+<span class="n">thirty_pyeong</span> <span class="o">=</span> <span class="mi">30</span> <span class="o">*</span> <span class="n">one_pyeong</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>선언된 변수를 이용하여 아래와 같이 문자열을 출력한다.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;84제곱미터:&quot;</span><span class="p">,</span> <span class="n">eightyfour_squaremeter</span><span class="p">,</span> <span class="s1">&#39;평&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;30평:&quot;</span><span class="p">,</span> <span class="n">thirty_pyeong</span><span class="p">,</span> <span class="s1">&#39;제곱미터&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>84제곱미터: 25.41 평
+30평: 99.17355371900827 제곱미터
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>예제 6</strong></p>
+<p>연이자 5%인 정기예금에 1천만원을 10년간 은행에 맡겼을 때
+10년 후에 수령할 금액을 계산하는 코드를 다양한 변수를 활용하여 구현한다.
+단, 다음 형식으로 출력하라.</p>
+<blockquote>
+<div><p>10년 후 받을 원금 + 이자는 OOO 원입니다.</p>
+</div></blockquote>
+<p>원리합계 계산은 아래 식을 따른다.</p>
+<blockquote>
+<div><p>원리합계 ＝ 원금 *  (1 ＋ 연금리 * 기간)</p>
+</div></blockquote>
+<p><strong>답</strong></p>
+<p>아래 변수를 활용해서 원리합계 수식을 간단하게 구현할 수 있다.</p>
+<ul class="simple">
+<li><p>principal = 원금</p></li>
+<li><p>rate = 연이자율</p></li>
+<li><p>period = 저축기간(년)</p></li>
+<li><p>savings = 원리합계</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">principal</span> <span class="o">=</span> <span class="mi">10000000</span>
+<span class="n">rate</span> <span class="o">=</span> <span class="mf">0.05</span>
+<span class="n">period</span> <span class="o">=</span> <span class="mi">10</span>
+
+<span class="n">savings</span> <span class="o">=</span> <span class="n">principal</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">rate</span> <span class="o">*</span> <span class="n">period</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;10년 후 받는 원금 + 이자는&quot;</span><span class="p">,</span> <span class="n">savings</span><span class="p">,</span> <span class="s2">&quot;원입니다.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10년 후 받는 원금 + 이자는 15000000.0 원입니다.
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id9">
+<h2><span class="section-number">2.9. </span>연습문제<a class="headerlink" href="#id9" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>아래 사이트에서 파이썬 프로그래밍을 하는 법을 확인하세요.</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/features/codespaces">깃허브 스페이스</a></p></li>
+<li><p><a class="reference external" href="https://colab.research.google.com">구글 코랩</a></p></li>
+<li><p><a class="reference external" href="https://www.kaggle.com">캐글</a></p></li>
+</ul>
+</li>
+<li><p>위 각각의 사이트에서 지금까지 공부한 내용을 직접 실행하세요.</p></li>
+</ol>
 </section>
 </section>
 
@@ -1007,13 +1553,15 @@ Hello, world!가 화면에 출력된다.</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">2.1. 가장 단순한 코드</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">2.2. 기초 명령문</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">2.3. 변수 할당</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">2.4. 파이썬 계산기</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">2.5. 정수와 부동소수점</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">2.6. 필수 예제</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">2.7. 연습문제</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hello-world">2.1. Hello, world! 문장 출력</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">2.2. 문자열</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">2.3. 줄바꿈과 들여쓰기</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">2.4. 기초 명령문</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">2.5. 변수 할당</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">2.6. 파이썬 계산기</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">2.7. 정수와 부동소수점</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">2.8. 예제</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">2.9. 연습문제</a></li>
 </ul>
   </nav></div>
 
